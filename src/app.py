@@ -12,7 +12,7 @@ def hello_flask():
 def show_home():
     return render_template('Index.html')
 
-@app.route('/<string: country>/<string: variety>/<float:aroma>/<float: aftertaste>/<float:acidity>/<float: body>/<float: balance>/<float:moisture>')
+@app.route('/<string: country>/<string: variety>/<float:aroma>/<float: aftertaste>/<float:acidity>/<float: body>/<float: balance>/<float:moisture>/')
 def result(country,variety, aroma,aftertaste,acidity,body,balance,moisture):
     cols=['country','variety', 'aroma','aftertaste','acidity','body','balance','moisture']
     data=[country,variety, aroma,aftertaste,acidity,body,balance,moisture]
@@ -24,7 +24,7 @@ def result(country,variety, aroma,aftertaste,acidity,body,balance,moisture):
         return jsonify(message='Es un cafe de primera'),200
     else:
         return jsonify(message='No es un cafe de primera'),200
-        
+
 if __name__ == '__main__':
     app.run(debug= True, host='127.0.0.1', port=5000) 
 
